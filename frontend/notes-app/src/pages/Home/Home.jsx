@@ -8,10 +8,10 @@ import Modal from "react-modal";
 
 const Home = () => {
 
-    const[openAddEditModal,setOpenAppEditModal]=useState({
-        isShown:false,
-        type:"add",
-        data:null,
+    const [openAddEditModal, setOpenAppEditModal] = useState({
+        isShown: false,
+        type: "add",
+        data: null,
     });
 
     return (
@@ -30,32 +30,39 @@ const Home = () => {
                         onDelete={() => { }}
                         onPinNote={() => { }}
                     />
-                     
+
                 </div>
             </div>
-            <button className='w-16 h-16 flex items-center justify-center rounded-2xl bg-primary hover:bg-blue-600 absolute right-10 bottom-10'  
-            onClick={()=>{
-                setOpenAppEditModal({isShown:true , type:"add" , data: null});
-            }}>
-                <MdAdd className="text-[32px] text-white"/> 
+            <button className='w-16 h-16 flex items-center justify-center rounded-2xl bg-primary hover:bg-blue-600 absolute right-10 bottom-10'
+                onClick={() => {
+                    setOpenAppEditModal({ isShown: true, type: "add", data: null });
+                }}>
+                <MdAdd className="text-[32px] text-white" />
             </button>
-            <Modal 
+            <Modal
                 isOpen={openAddEditModal.isShown}
-                onRequestClose={()=>{}}
+                onRequestClose={() => { }}
                 style={{
-                    overlay:{
-                        backgroundColor:"rgba(0,0,0,0.2)",
+                    overlay: {
+                        backgroundColor: "rgba(0,0,0,0.2)",
                     },
                 }}
                 contentLabel=""
-                className="">
-                     <AddEditNotes/>
-                </Modal>
-               
-            
-                
-            
-                
+                className="w-[40%] max-h-3/4 bg-white rounded-md mx-auto mt-14 p-5 overflow-auto"
+                >
+                <AddEditNotes 
+                type={openAddEditModal.type}
+                noteData={openAddEditModal.data}
+                onClose={()=>{
+                    setOpenAppEditModal({isShown:false,type:"add",data:null})
+                }}
+                />
+            </Modal>
+
+
+
+
+
         </>
     )
 }
