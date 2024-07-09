@@ -64,10 +64,10 @@ app.post("/create-account",async(req, res)=>{
         });
     }
     const user =new User({
-        fullName,
-        email,
-        password,
-        createdOn,
+        fullName:fullName,
+        email:email,
+        password:password,
+        createdon:fullName.createdOn,
     });
     await user.save();
 
@@ -125,7 +125,8 @@ app.get("/get-user",authenticateToken,async(req,res)=>{
         return res.sendStatus(401);
     }
     return res.json({
-        "user":{fullName:isUser.fullname,
+        "user":{
+        fullName:isUser.fullName,
         email:isUser.email,
         _id:isUser._id,
         createdOn:isUser.createdOn,

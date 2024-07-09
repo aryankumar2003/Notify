@@ -1,10 +1,10 @@
 const mongoose=require("mongoose")
 const Schema=mongoose.Schema;
 const userSchema =new Schema({
-    fullname:{type:String},
+    fullName:{type:String},
     email:{type:String},
     password:{type:String},
-    createdOn:{type:Date, Defaulf:new Date().getTime()},
+    createdon:{type:Date, Defaulf:new Date().getTime()},
 
 });
 
