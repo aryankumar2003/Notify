@@ -45,7 +45,7 @@ const Home = () => {
     
     const handleCloseToast=()=>{
         setShowToastMsg({
-            isShown:false,
+            isShown:true,
             message:"",
             
         });
