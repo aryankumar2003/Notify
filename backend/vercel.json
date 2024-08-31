@@ -5,10 +5,14 @@
         "use":"@vercel/node"
     }
 ],
+
 "routes":[
     {
         "src":"/(.*)",
         "dest":"/"
     }
 ]
+,
+
+  "buildCommand": "next build"
 }
