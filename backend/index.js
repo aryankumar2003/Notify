@@ -1,7 +1,7 @@
 
 require("dotenv").config();
 
-const config=require("./config.json");
+
 const mongoose =require("mongoose");
 
 mongoose.connect(process.env.MONGODB_URI, {
@@ -25,7 +25,8 @@ app.use(express.json());
  
 app.use(
     cors({
-        origin: "*",
+        origin: "https://notify-ten-lyart.vercel.app",
+        credentials: true
     })
 
 );
