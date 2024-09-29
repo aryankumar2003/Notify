@@ -14,7 +14,7 @@ const routes = (
         path="/" exact element={<Login />}
       />
       <Route
-        path="/signup" exact element={<SignUp />}
+        path="/signUp" exact element={<SignUp />}
       />
     </Routes>
   </Router>
