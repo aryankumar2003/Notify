@@ -1,4 +1,4 @@
-
+"use strict";
 require("dotenv").config();
 
 
@@ -21,17 +21,19 @@ const jwt=require("jsonwebtoken");
 
 const {authenticateToken}=require("./utilities");
 
-app.use(express.json());
+
  
 app.use(
     cors({
         origin: "https://notify-ten-lyart.vercel.app",
+        method:'GET,HEAD,PUT,PATCH,POST,DELETE,UPDATE',
         credentials: true
     })
 
 );
 app.options('*', cors());
 
+app.use(express.json());
 //test
 app.get("/",(req,res)=>{
     res.json({data: "hello"});
