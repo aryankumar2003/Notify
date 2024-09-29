@@ -30,6 +30,8 @@ app.use(
     })
 
 );
+app.options('*', cors());
+
 //test
 app.get("/",(req,res)=>{
     res.json({data: "hello"});
