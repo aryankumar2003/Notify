@@ -25,7 +25,7 @@ app.use(express.json());
  
 app.use(
     cors({
-        origin: "notify-ten-lyart.vercel.app",
+        origin: "https://notify-ten-lyart.vercel.app",
         credentials: true
     })
 

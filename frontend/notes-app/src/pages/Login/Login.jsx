@@ -76,7 +76,7 @@ const navigate=useNavigate();
                         </button>
                         <p className='text-sm text-center mt-4'>
                             Not registered yet?{" "}
-                            <Link to="/signUp" className="font-medium text-primary underline">
+                            <Link to="https://notify-ten-lyart.vercel.app/signUp" className="font-medium text-primary underline">
                                 Create an Account
                             </Link>
                         </p>
