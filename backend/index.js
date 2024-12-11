@@ -1,4 +1,3 @@
-"use strict";
 require("dotenv").config();
 
 
@@ -25,7 +24,7 @@ const {authenticateToken}=require("./utilities");
  
 app.use(
     cors({
-        origin: "https://notify-ten-lyart.vercel.app",
+        origin: "*",
         method:'GET,HEAD,PUT,PATCH,POST,DELETE,UPDATE',
         credentials: true
     })

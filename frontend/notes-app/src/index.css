@@ -1,31 +1,50 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer base{
+
+/* Base layer styling */
+@layer base {
     html {
-
-        font-family: "Poppins","sans-serif";
-
+        font-family: "Poppins", "sans-serif";
+        scroll-behavior: smooth;
     }
 
-    body{
-        background-color: antiquewhite;
+    body {
+        background-color: #1a1a2e; /* Darker shade for better contrast */
+        color: #e0e0e0; /* Light text for readability */
         overflow-x: hidden;
     }
 }
-@layer components{
-    .input-box{
-        @apply w-full text-sm bg-transparent border-[1.5px] px-5 py-3 rounded mb-4 outline-none;
+
+/* Components layer styling */
+@layer components {
+    /* Input Box Styling */
+    .input-box {
+        @apply w-full text-sm text-white bg-[#2b2b42] border-[1.5px] border-[#444566] px-5 py-3 rounded-lg mb-5 outline-none transition-colors duration-200;
     }
-    .btn-primary{
-        @apply w-full text-sm bg-primary text-white p-2 rounded my-1 hover:bg-blue-600;
+
+    .input-box:focus {
+        @apply border-primary ring-2 ring-primary/50; /* Ring effect on focus */
     }
-    .icon-btn{
-        @apply text-xl text-slate-300 cursor-pointer hover:text-primary;
+
+    /* Button Styling */
+    .btn-primary {
+        @apply w-full text-sm font-semibold bg-gradient-to-r from-blue-600 to-blue-400 text-white py-3 rounded-lg my-2 shadow-md transition-transform duration-200 ease-in-out;
     }
-    .input-label{
-        @apply text-xs text-slate-400;
+
+    .btn-primary:hover {
+        @apply bg-gradient-to-r from-blue-500 to-blue-300 scale-105; /* Light hover effect */
     }
+
+    .btn-primary:active {
+        @apply scale-95; /* Button click effect */
+    }
+
+    /* Icon Button Styling */
+    .icon-btn {
+        @apply text-2xl text-slate-300 cursor-pointer hover:text-blue-400 transition-colors duration-200;
+    }
+
+    /* Input Label*/
 }
