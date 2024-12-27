@@ -301,6 +301,6 @@ app.put("/update-pin/:noteId",authenticateToken,async(req,res)=>{
         });
     }
 })
-app.listen(10000);
+app.listen(process.env.PORT);
 
 module.exports=app;
